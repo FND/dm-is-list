@@ -6,6 +6,14 @@ require 'dm-migrations'
 
 DataMapper::Spec.setup
 
+class Animal
+  include DataMapper::Resource
+
+  property :id, Serial
+
+  is :list # unscoped; order is absolute/universal
+end
+
 class User
   include DataMapper::Resource
 
